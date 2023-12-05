@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4523c3c0-cf8e-4f6f-9302-60645caf3b61">
+	<property name="ireport.zoom" value="1.6105100000000032"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="queryString" class="java.lang.String"/>
+	<parameter name="cariBerdasar" class="java.lang.String"/>
+	<parameter name="tanggalAwal" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tanggalAkhir" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM Peminjamanskripsi]]>
+	</queryString>
+	<field name="kodepinjams" class="java.lang.String"/>
+	<field name="kodeskripsi.kodeskripsi" class="java.lang.String"/>
+	<field name="nama" class="java.lang.String"/>
+	<field name="nim" class="java.lang.String"/>
+	<field name="angkatan" class="java.lang.Integer"/>
+	<field name="tglpinjam" class="java.util.Date"/>
+	<field name="tglbalik" class="java.util.Date"/>
+	<field name="status" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="555" height="20" uuid="dd598c77-c4f8-484a-83df-3f05a5049604"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Dialog" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PEMINJAMAN SKRPSI PROGRAM STUDI SISTEM INFORMASI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="35" width="555" height="20" uuid="c5042029-9c46-41db-9760-dd1536ecfc00"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Dialog" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UIN SUNAN AMPEL SURABAYA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="83" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="9853188b-fedf-489f-9531-d6c9c3502f2b"/>
+				<textElement verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Hasil cetak pencarian :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="14" width="53" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="f521af82-d5b8-4deb-9339-3affd0f311f2"/>
+				<textElement verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tanggal awal :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="176" y="0" width="48" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="084e06f4-f89f-49f0-97a0-13b24104062b"/>
+				<textElement verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[berdasarkan]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="234" y="14" width="100" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="e205035d-21da-42ac-878c-151a2897e2a0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggalAkhir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="83" y="0" width="60" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="ac617e74-9240-4005-8e89-099d303a43bb"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{queryString}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="224" y="0" width="100" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="7fd0b38b-6b91-4435-bfb7-f70947740e49"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cariBerdasar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="66" y="14" width="110" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="f6dfbbaa-8098-4910-9689-651185393518"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggalAwal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="176" y="14" width="58" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="3f7a35fb-40db-4be6-a73b-b0d3d7d708ac"/>
+				<textElement verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tanggal akhir :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="42" height="20" uuid="3db49638-692b-494e-82ee-51a3232a23a5"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="285" y="0" width="56" height="20" uuid="5d1e46af-0439-4faa-a463-d616e99a159d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="341" y="0" width="73" height="20" uuid="7e5f3a19-1d48-4928-8a1d-36acd84d9bff"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="414" y="0" width="73" height="20" uuid="e999af8d-bfab-404d-af61-6699ef045254"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="487" y="0" width="68" height="20" uuid="3c9a3738-0e3c-4278-939c-415f23d0ffae"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="42" y="0" width="43" height="20" uuid="08227ed8-5dc9-4bb9-8a3f-aac9c1fee489"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="85" y="0" width="100" height="20" uuid="f9ff7554-c34e-4439-8606-74a3b474dd16"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="185" y="0" width="100" height="20" uuid="a9f58350-1a11-4ff7-a82f-a2e3d67a8455"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="1" width="42" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="69e33ade-7690-4434-9430-a2eed79c7387"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[KODE PINJAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="487" y="0" width="68" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="2298a0c1-5de4-4a37-abdc-a25ae81da50e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[STATUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="414" y="0" width="73" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="eaa6bb71-1121-4511-a0f3-7ed19420909a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[TGL KEMBALI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="341" y="0" width="73" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="d62f7402-96f4-49cb-9efd-0f8450ecfebe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[TGL PINJAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="285" y="0" width="56" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="a512db6c-e8fa-434d-9c02-0ee87171063f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[ANGKATAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="185" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="56039997-9ccb-4522-81e0-39f25d241f07"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[NIM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="85" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="8174c087-e2e9-4f2f-a18a-a7ff038304ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[NAMA LENGKAP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="42" y="0" width="43" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="f7cffa9a-ebb4-4c6a-b2de-881173f669f0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[KODE BUKU]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="42" y="-1" width="43" height="20" uuid="7f961192-5185-4fca-a1e9-3d0cf1246d93"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="85" y="-1" width="100" height="20" uuid="9908f34a-9a0c-4dfc-9a94-368aa85d2220"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="185" y="-1" width="100" height="20" uuid="d96fe6b0-c85a-46c6-a590-697e72377c69"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="285" y="-1" width="56" height="20" uuid="83e89cea-0c84-4fe0-810d-ddfee6693373"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="341" y="-1" width="73" height="20" uuid="75973bc0-df23-47b5-ae8a-5d767e0eb62e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="414" y="-1" width="73" height="20" uuid="e7d6a56e-d6e2-4034-b2c6-e69f10bf0791"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="487" y="-1" width="68" height="20" uuid="34dcf275-ae46-42dc-bc9a-14d744505a4c"/>
+			</rectangle>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="42" y="0" width="43" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="d55544da-61ec-48ae-9d52-81210f1949db"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kodeskripsi.kodeskripsi}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="85" y="-1" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="ff19eb89-93cb-4a28-93cd-1b9b222cbccb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="185" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="c603f0b8-0537-4996-aff6-cd271f05d8fb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nim}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="285" y="-1" width="56" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="b795cf78-350f-4255-bded-9cbc9b123650"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{angkatan}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="487" y="-1" width="68" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="0ba51ab4-c47f-420a-aec2-f2ba6ce86b01"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="414" y="0" width="73" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="42e08cfd-9d51-4449-92ae-472f9f7368f6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tglbalik}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="341" y="0" width="73" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="a9708775-252e-43a5-8660-591fc5d229eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tglpinjam}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="-1" width="42" height="20" uuid="6a9db23c-294a-4818-9195-3493010b7728"/>
+			</rectangle>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="0" y="0" width="42" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="aa36a587-f17b-4016-9bd4-7455c2e385f7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kodepinjams}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
