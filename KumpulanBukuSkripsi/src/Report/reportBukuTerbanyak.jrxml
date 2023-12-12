@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e47d17a1-d316-4d59-8c9e-20e20274a91d">
+	<property name="ireport.zoom" value="1.9487171000000019"/>
+	<property name="ireport.x" value="77"/>
+	<property name="ireport.y" value="109"/>
+	<queryString>
+		<![CDATA[SELECT COUNT(pb.kodepinjamb) AS jumlah_peminjaman, b.judulbuku , b.kodebuku FROM Buku b LEFT JOIN Peminjamanbuku pb ON b.kodebuku = pb.kodebuku GROUP BY b.kodebuku ORDER BY jumlah_peminjaman]]>
+	</queryString>
+	<field name="jumlah_peminjaman" class="java.lang.Long"/>
+	<field name="judulbuku" class="java.lang.String"/>
+	<field name="kodebuku" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="36" width="555" height="20" uuid="f500c1fd-a02f-467d-9ed3-2a0b800ebe6d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Dialog" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UIN SUNAN AMPEL SURABAYA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="16" width="555" height="20" uuid="8b883e8e-a87c-4992-ada7-11a0d47335d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Dialog" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN BUKU PEMINJAMAN TERBANYAK PROGRAM STUDI SISTEM INFORMASI]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="440" y="0" width="48" height="20" uuid="5fd477e9-a316-4a5b-8636-b15973e9c7e0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Dialog" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tanggal cetak:]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="488" y="0" width="67" height="20" uuid="3ed8163e-73af-4ac6-9544-01136053b327"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="111" height="20" uuid="8be0e555-9984-4b6a-bb99-fc9c255e53c4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="111" y="0" width="259" height="20" uuid="7d89d561-7333-4f6f-a935-c73ba9be0b56"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="370" y="0" width="185" height="20" uuid="6030a5fb-4512-4a23-946e-83a73c731e58"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="370" y="0" width="185" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="f17ff9fc-1eae-4625-b897-20dbf2e5c2c3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[JUMLAH PEMINJAMAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="111" y="0" width="259" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="62559aaa-a6e3-4783-86e1-a7d101f8be07"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[JUDUL BUKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="111" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="8807032a-c453-47e3-b225-35449bbcbb87"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[KODE BUKU]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="111" height="20" uuid="f411ddb5-aa94-453d-9377-f0f2f816c8f3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="370" y="0" width="185" height="20" uuid="82e230ea-d1b5-4313-804f-8afef5c0b90f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="111" y="0" width="259" height="20" uuid="6bb713d8-4f6b-4ebb-a895-9a3489171802"/>
+			</rectangle>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="370" y="0" width="185" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="d5473eda-e273-4dd0-bfe5-8cedc252b5e7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jumlah_peminjaman}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="111" y="0" width="259" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="42499c81-77a3-4382-9343-57b45daee745"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{judulbuku}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="0" y="0" width="111" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="20ca79dd-76f9-464a-b323-fdb090b01825"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kodebuku}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="520" y="34" width="35" height="20" uuid="9dddda43-5431-4208-991e-ef334ae2b324"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="34" width="75" height="20" uuid="45555014-ba22-4c2f-a554-2cb9fba199cc"/>
+				<textElement textAlignment="Right">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
